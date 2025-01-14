@@ -1,0 +1,47 @@
+{
+    "Voyages": [
+      {
+        "idVoyage": 1,
+        "idPMR": 101,
+        "idTrajets": [1, 2],
+        "lieuDepart": "Paris",
+        "lieuArrivé": "Lyon",
+        "dateCréation": "2025-01-14T10:00:00Z"
+      },
+      {
+        "idVoyage": 2,
+        "idPMR": 102,
+        "idTrajets": [3],
+        "lieuDepart": "Marseille",
+        "lieuArrivé": "Nice",
+        "dateCréation": "2025-01-13T08:00:00Z"
+      }
+    ],
+    "Trajets": [
+      {
+        "idTrajet": 1,
+        "idAssistant": 201,
+        "idAccompagnateur": 301,
+        "date-heureDepart": "2025-01-14T12:00:00Z",
+        "date-heureArrivé": "2025-01-14T14:30:00Z",
+        "idTransport": 401
+      },
+      {
+        "idTrajet": 2,
+        "idAssistant": 202,
+        "idAccompagnateur": 302,
+        "date-heureDepart": "2025-01-14T15:00:00Z",
+        "date-heureArrivé": "2025-01-14T17:00:00Z",
+        "idTransport": 402
+      },
+      {
+        "idTrajet": 3,
+        "idAssistant": 203,
+        "idAccompagnateur": 303,
+        "date-heureDepart": "2025-01-13T09:00:00Z",
+        "date-heureArrivé": "2025-01-13T10:30:00Z",
+        "idTransport": 403
+      }
+    ]
+  }
+  

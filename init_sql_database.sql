@@ -32,6 +32,14 @@ CREATE TABLE Assistants (
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE Transports (
+    idTransport INT PRIMARY KEY,
+    type VARCHAR(50),
+    compagnie VARCHAR(100),
+    modele VARCHAR(100),
+    capacite INT
+);
+
 INSERT INTO Pmr (nom, prenom, date_de_naissance, type_handicap, email, mot_de_passe)
 VALUES
 ('Dupont', 'Alice', '1985-03-10', 'Mobilité réduite', 'alice.dupont@example.com', 'mdp1234'),
@@ -49,3 +57,8 @@ VALUES
 ('Moreau', 'Thomas', '1992-04-25', 'thomas.moreau@example.com', 'assist1'),
 ('Rousseau', 'Elise', '1988-10-13', 'elise.rousseau@example.com', 'assist2'),
 ('Petit', 'Lucas', '1995-01-20', 'lucas.petit@example.com', 'assist3');
+
+INSERT INTO Transports (idTransport, type, compagnie, modele, capacite)
+VALUES
+(401, 'Train', 'SNCF', 'TGV', 300),
+(402, 'Avion', 'Air France', 'Boeing 737', 180);
