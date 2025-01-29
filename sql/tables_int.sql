@@ -1,0 +1,33 @@
+CREATE TABLE User (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    date_de_naissance DATE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Handicap (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Client (
+    id INT PRIMARY KEY,
+    id_handicap INT,
+    FOREIGN KEY (id) REFERENCES User(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_handicap) REFERENCES Handicap(id) ON DELETE SET NULL
+);
+
+CREATE TABLE Compagnie (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Assistant (
+    id INT PRIMARY KEY,
+    id_compagnie INT NOT NULL,
+    FOREIGN KEY (id) REFERENCES User(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_compagnie) REFERENCES Compagnie(id) ON DELETE CASCADE
+);

@@ -1,0 +1,27 @@
+[
+    {
+        "_id": 1,
+        "nom": "Train"
+    },
+    {
+      "_id": 2,
+      "nom": "Avion"
+    },
+    {
+      "_id": 3,
+      "nom": "Voiture adaptée PMR"
+    },
+    {
+      "_id": 4,
+      "nom": "Bus"
+    },
+    {
+      "_id": 5,
+      "nom": "Taxi PMR"
+    },
+    {
+      "_id": 6,
+      "nom": "Tramway"
+    }
+  ]
+  
