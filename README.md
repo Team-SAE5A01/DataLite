@@ -21,54 +21,6 @@
 
 ---
 
-## Prérequis
-
-- **MySQL** ≥ 8.x ou un conteneur MySQL déjà en cours d’exécution.
-- **MongoDB** ≥ 6.x ou un conteneur MongoDB déjà en cours d’exécution.
-- Accès à la ligne de commande (`mysql`, `mongosh` ou `mongoimport`).
-
----
-
-## Initialisation MySQL
-
-### 1. Créer les tables
-
-Depuis le répertoire `mysql/import` :
-```bash
-mysql -u <utilisateur> -p -h <hôte> <nom_bdd> < 1_tables_init.sql
-```
-
-### 2. Insérer les données initiales
-```bash
-mysql -u <utilisateur> -p -h <hôte> <nom_bdd> < 2_data_init.sql
-```
-
-Exemple :
-```bash
-mysql -u root -p -h localhost wheeltrip < 1_tables_init.sql
-mysql -u root -p -h localhost wheeltrip < 2_data_init.sql
-```
-
----
-
-## Initialisation MongoDB
-
-Les fichiers JSON peuvent être importés avec `mongoimport`.
-
-Exemple :
-```bash
-mongoimport --db datalite --collection transports --file mongodb/import/transports.json --jsonArray
-mongoimport --db datalite --collection voyages --file mongodb/import/voyages.json --jsonArray
-```
-
-Vérifier ensuite dans `mongosh` :
-```bash
-use datalite
-show collections
-```
-
----
-
 ## Intégration avec Docker
 
 Si vous utilisez les services définis dans **InfraEngine** :
@@ -86,15 +38,6 @@ services:
     volumes:
       - ./mysql/import:/docker-entrypoint-initdb.d
 ```
-
----
-
-## Bonnes pratiques
-
-- Ne pas modifier directement les fichiers `import/` en production.
-- Versionner séparément les jeux de données de test et de production.
-- Garder un ordre logique dans les scripts SQL (`1_tables_init.sql` avant `2_data_init.sql`).
-- Utiliser des jeux de données réduits pour les environnements de développement.
 
 ---
 
